@@ -145,5 +145,5 @@ dmypy.json
 .mypy_cache
 data/
 
-# Ффйловые хранилища
+# Файловые хранилища
 media/

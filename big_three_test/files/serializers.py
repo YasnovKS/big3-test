@@ -8,6 +8,9 @@ from files.models import File
 
 
 class FileSerializer(serializers.ModelSerializer):
+    '''Сериализатор для обработки запросов при создании,
+    получении и удалении файлов.'''
+
     file = BinnaryImageField()
     file_type = serializers.CharField(required=False)
     size = serializers.CharField(required=False)
@@ -37,7 +40,12 @@ class FileSerializer(serializers.ModelSerializer):
 
         file_type, _ = mimetypes.guess_type(file.name)
         # file_type возвращается в формате "type/extension"
-        file_type = file_type.split('/')[0]
+        try:
+            file_type = file_type.split('/')[0]
+        except AttributeError:
+            raise serializers.ValidationError(
+                'Поле "Тип файла" содержит недопустимое значение.'
+            )
         return file_type if file_type in allowed_types else None
 
     def get_file_size(self, file):

@@ -2,11 +2,10 @@ from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
-from files.urls import router as files_router
 
 
 urlpatterns = [
-    path('api/', include(files_router.urls)),
+    path('api/', include('files.urls', namespace='files')),
     path('admin/', admin.site.urls),
 ]
 
