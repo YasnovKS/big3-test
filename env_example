@@ -1,0 +1,10 @@
+POSTGRES_ENGINE=django.db.backends.postgresql
+POSTGRES_USER=postgresuser
+POSTGRES_PASSWORD=ksjbxc^xyb23jMkjxcs@co
+POSTGRES_DB=my_db_name
+POSTGRES_HOST=localhost
+POSTGRES_PORT=5432
+
+SECRET_KEY=django-insecure-x8=bojy&7n8w824gk7c^bz0ll865-dexwk52&+4$wvzsuw
+DEBUG=True
+ALLOWED_HOSTS=localhost,127.0.0.1
