@@ -32,4 +32,4 @@ class File(models.Model):
         ordering = ['-created']
 
     def __str__(self) -> str:
-        return f'{self.name} от {self.created}'
+        return self.created.strftime('%d_%m_%Y__%H_%M_%S')
