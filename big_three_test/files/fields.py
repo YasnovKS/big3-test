@@ -6,6 +6,8 @@ from rest_framework import serializers
 
 
 class BinnaryImageField(serializers.FileField):
+    '''Поле для обработки данных файла, переданных в кодировке Base64.'''
+
     def to_internal_value(self, data):
         if isinstance(data, str) and data.startswith('data:'):
             format, imgstr = data.split(';base64,')

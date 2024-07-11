@@ -20,6 +20,7 @@ schema_view = get_schema_view(
 
 
 urlpatterns = [
+    path('', include('vision.urls', namespace='vision')),
     path('api/', include('files.urls', namespace='files')),
     path('admin/', admin.site.urls),
     path('swagger/', schema_view.with_ui(

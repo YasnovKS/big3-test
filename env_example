@@ -8,3 +8,4 @@ POSTGRES_PORT=5432
 SECRET_KEY=django-insecure-x8=bojy&7n8w824gk7c^bz0ll865-dexwk52&+4$wvzsuw
 DEBUG=True
 ALLOWED_HOSTS=localhost,127.0.0.1
+DOMAIN=http://127.0.0.1:8000

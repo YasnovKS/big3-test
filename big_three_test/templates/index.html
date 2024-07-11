@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>Введите URL камеры</h1>
+    <form method="post" action="">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Подключиться к камере</button>
+    </form>
+    {% if file_url %}
+        <h2>Итоговое изображение</h2>
+        <img src="{{ file_url }}" width="800px" height="500px">
+    {% endif %}
+    <style>
+        .stream-wrapper {
+            display: flex;
+            width: 1000px;
+            height: 800px;
+        }
+    </style>
+{% endblock %}
